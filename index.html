@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Grafzorflit: Your ultimate social gaming platform for fun, challenges, and community. Play exciting games and connect with friends.">
+    <meta name="keywords" content="social games, online games, free games, community gaming, casual games, challenges, tournaments, Grafzorflit">
+    <title>Grafzorflit - Play Together, Anywhere</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="files/layout.css">
+<link rel="icon" type="image/png" href="files/graphics/favicon.png">
+</head>
+<body>
+    <!-- Age Verification Modal -->
+    <div class="modal fade" id="ageVerificationModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="ageVerificationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-white border-0">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title w-100 text-center" id="ageVerificationModalLabel">Age Verification</h5>
+                </div>
+                <div class="modal-body text-center">
+                    <p>This site is intended solely for individuals aged 18 and over. Are you sure you have reached this age?</p>
+                    <div class="d-flex justify-content-center gap-3 mt-4">
+                        <button type="button" class="btn btn-success btn-lg" id="confirmAgeBtn">Yes, I am 18</button>
+                        <button type="button" class="btn btn-danger btn-lg" id="declineAgeBtn">No, I am not yet</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Red Disclaimer Banner -->
+    <div class="age-disclaimer-banner text-center py-2 bg-danger text-white fw-bold">
+        Use is intended for adults 18+ only. All users make their own decisions and are responsible for any consequences. If participation stops being fun, take a break and seek support.
+    </div>
+
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container-fluid container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="files/graphics/logo.png" alt="Grafzorflit Logo" class="me-2 logo-img">
+                <span class="site-title">Grafzorflit</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Grafzorflit Menu</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link smooth-scroll" href="#hero">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link smooth-scroll" href="#games">Games</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link smooth-scroll" href="#about">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link smooth-scroll" href="#faq">FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section d-flex align-items-center text-white text-center text-md-start py-5" style="background-image: url('files/graphics/media/social-gaming-hero-bg_2.jpg');">
+            <div class="overlay"></div>
+            <div class="container position-relative z-1">
+                <div class="row align-items-center text-center justify-content-center">
+                    <div class="col-md-10 mb-4 mb-md-0">
+                        <h1 class="display-3 fw-bold">Play Together, Anywhere</h1>
+                        <p class="lead mt-3 mb-4">Join Grafzorflit, the ultimate social gaming platform where fun knows no bounds. Connect with friends, compete in tournaments, and discover exciting new challenges every day.</p>
+                        <a href="#games" class="btn btn-primary btn-lg smooth-scroll">Start Playing Now!</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Our Platform Section -->
+        <section id="about" class="py-5 bg-light-green">
+            <div class="container">
+                <h2 class="display-4 fw-bold text-dark-green mb-4">About Grafzorflit: Your Social Gaming Hub</h2>
+                <div class="row align-items-center">
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <img src="files/graphics/media/about-platform_19.jpg" alt="About Grafzorflit" class="img-fluid rounded shadow-lg">
+                    </div>
+                    <div class="col-md-6">
+                        <p class="lead">Grafzorflit is more than just a gaming platform; it's a vibrant community where players come together to enjoy a wide array of social games without any real money involvement. Our mission is to provide a safe, engaging, and endlessly entertaining environment for everyone aged 18 and over. We believe in the power of play to connect people, foster friendly competition, and create memorable experiences.</p>
+                        <p>Our platform offers a diverse selection of games, from casual puzzles to engaging strategy challenges, all designed to be played with friends or new acquaintances. We prioritize fair play, user experience, and a supportive community atmosphere. You can track your progress, earn achievements, and climb the leaderboards purely for bragging rights and the joy of accomplishment.</p>
+                    </div>
+                    <ul class="list-unstyled">
+                        <li class="d-flex align-items-start mb-2">
+                            <i class="bi bi-people-fill text-primary me-2 fs-4"></i>
+                            <div>
+                                <h4 class="h5 fw-bold mb-0">Connect & Compete</h4>
+                                <p class="mb-0">Easily find and add friends, create clans, and compete in daily challenges and tournaments to prove your skills and teamwork.</p>
+                            </div>
+                        </li>
+                        <li class="d-flex align-items-start mb-2">
+                            <i class="bi bi-award-fill text-primary me-2 fs-4"></i>
+                            <div>
+                                <h4 class="h5 fw-bold mb-0">Rewarding Experiences</h4>
+                                <p class="mb-0">Unlock unique achievements, earn exclusive badges, and see your name on the global leaderboards. Every game brings new opportunities for recognition.</p>
+                            </div>
+                        </li>
+                        <li class="d-flex align-items-start mb-2">
+                            <i class="bi bi-joystick text-primary me-2 fs-4"></i>
+                            <div>
+                                <h4 class="h5 fw-bold mb-0">Safe & Responsible Fun</h4>
+                                <p class="mb-0">We are committed to promoting responsible gaming. Our platform is designed for entertainment only, with clear guidelines to ensure a positive and safe environment for all players.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Selection Section -->
+        <section id="games" class="py-5 bg-dark-green text-white">
+            <div class="container">
+                <h2 class="display-4 fw-bold text-center mb-5">Our Social Games</h2>
+                <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+                    <!-- Game Card 1: Dragon Egg -->
+                    <div class="col">
+                        <div class="card h-100 bg-secondary-dark text-white border-0 shadow-lg game-card">
+                            <a href="game/dragon-egg.html" class="game-link" data-game-path="playroom/dragon-egg/">
+                                <img src="files/graphics/media/dragon-egg-thumbnail_2.png" class="card-img-top game-img placeholder-glow" alt="Dragon Egg">
+                            </a>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">Dragon Egg</h5>
+                                <p class="card-text flex-grow-1">Embark on a mythical journey to hatch the legendary Dragon Egg. A captivating adventure with exciting challenges and magical rewards!</p>
+                                <a href="game/dragon-egg.html" class="btn btn-primary mt-3">Play Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Game Card 2: Egypt slot -->
+                    <div class="col">
+                        <div class="card h-100 bg-secondary-dark text-white border-0 shadow-lg game-card">
+                            <a href="game/egypt-slot.html" class="game-link">
+                                <img src="files/graphics/media/egypt-slot-thumbnail_2.png" class="card-img-top game-img placeholder-glow" alt="Egypt slot">
+                            </a>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">Egypt Slot</h5>
+                                <p class="card-text flex-grow-1">Uncover ancient treasures in the sands of Egypt. Spin the reels and discover hidden riches in this classic social slot experience.</p>
+                                <a href="game/egypt-slot.html" class="btn btn-primary mt-3">Play Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Game Card 3: Halloween slot -->
+                    <div class="col">
+                        <div class="card h-100 bg-secondary-dark text-white border-0 shadow-lg game-card">
+                            <a href="game/halloween-slot.html" class="game-link">
+                                <img src="files/graphics/media/halloween-slot-thumbnail_3.png" 
+                                    class="card-img-top game-img placeholder-glow" 
+                                    alt="Halloween slot">
+                            </a>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">Halloween Slot</h5>
+                                <p class="card-text flex-grow-1">Get into the spooky spirit with our Halloween-themed social slot. Ghosts, goblins, and ghoulish fun await with every spin!</p>
+                                <a href="game/halloween-slot.html" class="btn btn-primary mt-3">Play Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Play Section -->
+        <section id="how-to-play" class="py-5 bg-light-green">
+            <div class="container">
+                <h2 class="display-4 fw-bold text-center text-dark-green mb-5">How to Play & Responsible Fun</h2>
+                <div class="row">
+                    <div class="col-lg-8 mb-4 mb-lg-0">
+                        <h3 class="h4 fw-bold text-dark-green mb-3">Getting Started with Grafzorflit:</h3>
+                        <ol class="list-group list-group-numbered list-group-flush mb-4">
+                            <li class="list-group-item bg-transparent border-0 d-flex align-items-center">
+                                <i class="bi bi-person-plus-fill text-primary me-3 fs-4"></i>
+                                <div>
+                                    <h5 class="mb-1 fw-bold">Create Your Account</h5>
+                                    <p class="mb-0">Sign up quickly and easily to join our vibrant community. It's free and takes just a few moments!</p>
+                                </div>
+                            </li>
+                            <li class="list-group-item bg-transparent border-0 d-flex align-items-center">
+                                <i class="bi bi-controller text-primary me-3 fs-4"></i>
+                                <div>
+                                    <h5 class="mb-1 fw-bold">Explore Our Games</h5>
+                                    <p class="mb-0">Dive into our diverse collection of social games. Find your favorites or discover new challenges every day.</p>
+                                </div>
+                            </li>
+                            <li class="list-group-item bg-transparent border-0 d-flex align-items-center">
+                                <i class="bi bi-people-fill text-primary me-3 fs-4"></i>
+                                <div>
+                                    <h5 class="mb-1 fw-bold">Connect with Friends</h5>
+                                    <p class="mb-0">Add friends, form clans, and engage in friendly competition. The more, the merrier!</p>
+                                </div>
+                            </li>
+                            <li class="list-group-item bg-transparent border-0 d-flex align-items-center">
+                                <i class="bi bi-trophy-fill text-primary me-3 fs-4"></i>
+                                <div>
+                                    <h5 class="mb-1 fw-bold">Compete & Achieve</h5>
+                                    <p class="mb-0">Participate in tournaments, complete daily challenges, and earn badges to climb the leaderboards.</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card bg-dark text-white shadow-lg h-100">
+                            <div class="card-body">
+                                <h3 class="h4 fw-bold text-warning mb-3"><i class="bi bi-exclamation-triangle-fill me-2"></i>Play Responsibly</h3>
+                                <p class="card-text text-white">At Grafzorflit, we advocate for a healthy and balanced gaming experience. Remember these tips:</p>
+                                <ul class="list-unstyled">
+                                    <li class="d-flex align-items-start mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><span>Play for enjoyment, not for gain.</span></li>
+                                    <li class="d-flex align-items-start mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><span>Set personal time and spending limits.</span></li>
+                                    <li class="d-flex align-items-start mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><span>Take regular breaks to refresh.</span></li>
+                                    <li class="d-flex align-items-start mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><span>Never chase losses; every game is for fun.</span></li>
+                                    <li class="d-flex align-items-start mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><span>If gaming stops being fun, seek support.</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tournaments Section -->
+        <section id="tournaments" class="py-5 bg-dark-green text-white">
+            <div class="container">
+                <h2 class="display-4 fw-bold text-center mb-5">Current Tournament Leaders</h2>
+                <div class="row justify-content-center g-4">
+                    <div class="col-md-4">
+                        <div class="tournament-leader card bg-secondary-dark text-white text-center p-4 shadow-lg h-100">
+                            <i class="bi bi-trophy-fill text-warning display-4 mb-3"></i>
+                            <img src="files/graphics/avatar-male-1.jpg" alt="Avatar John Doe" class="rounded-circle mx-auto mb-3 avatar-lg">
+                            <h4 class="fw-bold mb-1">John Doe</h4>
+                            <p class="text-white mb-2">Points: <strong class="text-primary">12,500</strong></p>
+                            <span class="badge bg-warning text-dark position-absolute top-0 start-50 translate-middle rounded-pill px-3 py-2">#1</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="tournament-leader card bg-secondary-dark text-white text-center p-4 shadow-lg h-100">
+                            <i class="bi bi-trophy-fill text-secondary display-4 mb-3"></i>
+                            <img src="files/graphics/avatar-female-1.jpg" alt="Avatar Jane Smith" class="rounded-circle mx-auto mb-3 avatar-lg">
+                            <h4 class="fw-bold mb-1">Jane Smith</h4>
+                            <p class="text-white mb-2">Points: <strong class="text-primary">10,200</strong></p>
+                            <span class="badge bg-secondary text-dark position-absolute top-0 start-50 translate-middle rounded-pill px-3 py-2">#2</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="tournament-leader card bg-secondary-dark text-white text-center p-4 shadow-lg h-100">
+                            <i class="bi bi-trophy-fill text-info display-4 mb-3"></i>
+                            <img src="files/graphics/avatar-male-2.jpg" alt="Avatar Alex Johnson" class="rounded-circle mx-auto mb-3 avatar-lg">
+                            <h4 class="fw-bold mb-1">Alex Johnson</h4>
+                            <p class="text-white mb-2">Points: <strong class="text-primary">9,850</strong></p>
+                            <span class="badge bg-info text-dark position-absolute top-0 start-50 translate-middle rounded-pill px-3 py-2">#3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leaderboards Section -->
+        <section id="leaderboards" class="py-5 bg-light-green">
+            <div class="container">
+                <h2 class="display-4 fw-bold text-center text-dark-green mb-5">Global Leaderboards</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover bg-white rounded shadow-lg">
+                        <thead>
+                            <tr>
+                                <th scope="col">Rank</th>
+                                <th scope="col">Player</th>
+                                <th scope="col">Country</th>
+                                <th scope="col">Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td><img src="files/graphics/avatar-male-fi-1.jpg" alt="Avatar Eero Virtanen" class="rounded-circle avatar-sm me-2"> Eero Virtanen</td>
+                                <td><i class="bi bi-flag-fill me-2"></i>FI</td>
+                                <td>25,123</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td><img src="files/graphics/avatar-female-fi-1.jpg" alt="Avatar Aino Lehtonen" class="rounded-circle avatar-sm me-2"> Aino Lehtonen</td>
+                                <td><i class="bi bi-flag-fill me-2"></i>FI</td>
+                                <td>23,890</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td><img src="files/graphics/avatar-male-fi-2.jpg" alt="Avatar Oskari Korhonen" class="rounded-circle avatar-sm me-2"> Oskari Korhonen</td>
+                                <td><i class="bi bi-flag-fill me-2"></i>FI</td>
+                                <td>21,567</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td><img src="files/graphics/avatar-female-fi-2.jpg" alt="Avatar Sofia Mäkinen" class="rounded-circle avatar-sm me-2"> Sofia Mäkinen</td>
+                                <td><i class="bi bi-flag-fill me-2"></i>FI</td>
+                                <td>19,345</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td><img src="files/graphics/avatar-male-fi-3.jpg" alt="Avatar Elias Nieminen" class="rounded-circle avatar-sm me-2"> Elias Nieminen</td>
+                                <td><i class="bi bi-flag-fill me-2"></i>FI</td>
+                                <td>18,765</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="py-5 bg-dark-green text-white">
+            <div class="container">
+                <h2 class="display-4 fw-bold text-center mb-5">Unlock Exclusive Achievements</h2>
+                <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+                    <div class="col">
+                        <div class="card h-100 bg-secondary-dark text-white text-center p-3 shadow-lg">
+                            <img src="files/graphics/media/badge-first-victory_2.png" class="mx-auto mb-3 achievement-badge" alt="First Victory Badge">
+                            <h5 class="fw-bold">First Victory</h5>
+                            <p class="card-text">Achieved by winning your first game. A true mark of a rising champion!</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 bg-secondary-dark text-white text-center p-3 shadow-lg">
+                            <img src="files/graphics/media/badge-social-butterfly_2.png" class="mx-auto mb-3 achievement-badge" alt="Social Butterfly Badge">
+                            <h5 class="fw-bold">Social Butterfly</h5>
+                            <p class="card-text">Earned by adding 10 friends and joining a clan. Community is key!</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 bg-secondary-dark text-white text-center p-3 shadow-lg">
+                            <img src="files/graphics/media/badge-daily-streak_2.png" class="mx-auto mb-3 achievement-badge" alt="Daily Streak Master Badge">
+                            <h5 class="fw-bold">Daily Streak Master</h5>
+                            <p class="card-text">Awarded for completing daily challenges for 7 consecutive days. Consistency pays off!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Daily Challenges Section -->
+        <section id="challenges" class="py-5 bg-light-green">
+            <div class="container">
+                <h2 class="display-4 fw-bold text-center text-dark-green mb-5">Daily Challenges & Rewards</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card bg-white shadow-lg p-4">
+                            <ul class="list-group list-group-flush mb-4">
+                                <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent border-bottom px-0 py-3">
+                                    <span><i class="bi bi-circle me-2 text-primary"></i> Play 3 games</span>
+                                    <span class="badge bg-secondary">Pending</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent border-bottom px-0 py-3">
+                                    <span><i class="bi bi-circle me-2 text-primary"></i> Win 1 tournament match</span>
+                                    <span class="badge bg-secondary">Pending</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent border-bottom px-0 py-3">
+                                    <span><i class="bi bi-circle me-2 text-primary"></i> Invite a friend</span>
+                                    <span class="badge bg-secondary">Pending</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent px-0 py-3">
+                                    <span><i class="bi bi-circle me-2 text-primary"></i> Collect 500 points</span>
+                                    <span class="badge bg-secondary">Pending</span>
+                                </li>
+                            </ul>
+                            <div class="text-center mt-4">
+                                <p class="lead mb-3">Complete all challenges to earn a <strong class="text-primary">Bonus Spin!</strong></p>
+                                <button type="button" class="btn btn-success btn-lg disabled" id="getBonusBtn">Get Your Bonus</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quests Section -->
+        <section id="quests" class="py-5 bg-dark-green text-white">
+            <div class="container">
+                <h2 class="display-4 fw-bold text-center mb-5">Clan Quests: Team Up & Conquer!</h2>
+                <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
+                    <div class="col">
+                        <div class="card h-100 bg-secondary-dark text-white p-4 shadow-lg">
+                            <h5 class="card-title fw-bold mb-3"><i class="bi bi-flag-fill me-2 text-primary"></i>The Great Treasure Hunt</h5>
+                            <p class="card-text">Work with your clan to find hidden artifacts across various games. Collaboration is key to success!</p>
+                            <div class="progress mb-3" role="progressbar" aria-label="Progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar bg-primary" style="width: 0%">0%</div>
+                            </div>
+                            <p class="small">Current Participants: Alice, Bob, Charlie, David</p>
+                            <p class="small mb-0">Reward: Exclusive Clan Badge & 1000 Bonus Points</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 bg-secondary-dark text-white p-4 shadow-lg">
+                            <h5 class="card-title fw-bold mb-3"><i class="bi bi-shield-fill me-2 text-primary"></i>Defend the Citadel</h5>
+                            <p class="card-text">Unite your clan to defend the virtual citadel from incoming challenges. Strategy and teamwork are essential!</p>
+                            <div class="progress mb-3" role="progressbar" aria-label="Progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar bg-primary" style="width: 0%">0%</div>
+                            </div>
+                            <p class="small">Current Participants: Eve, Frank, Grace</p>
+                            <p class="small mb-0">Reward: Rare Avatar Frame & 500 Bonus Points</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Social Section -->
+        <section id="faq" class="py-5 bg-light-green">
+            <div class="container">
+                <h2 class="display-4 fw-bold text-center text-dark-green mb-5">Frequently Asked Questions</h2>
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item mb-3 rounded shadow-sm">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button fw-bold bg-white text-dark-green" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <i class="bi bi-controller me-2 text-primary"></i> Gameplay Questions
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body bg-light text-dark-green">
+                                <p><strong>Q: How do I start a new game?</strong></p>
+                                <p>A: Simply navigate to the 'Games' section, choose your desired game, and click 'Play Now'. Most games will start instantly.</p>
+                                <p><strong>Q: Are there any in-game purchases?</strong></p>
+                                <p>A: Grafzorflit is a completely free-to-play social gaming platform. There are no real money purchases or transactions within any of our games.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item mb-3 rounded shadow-sm">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed fw-bold bg-white text-dark-green" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <i class="bi bi-people-fill me-2 text-primary"></i> Friends & Community
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body bg-light text-dark-green">
+                                <p><strong>Q: How can I add friends?</strong></p>
+                                <p>A: You can add friends by searching for their username within the 'Friends' section or by clicking on their profile in game leaderboards.</p>
+                                <p><strong>Q: What are clans and how do I join one?</strong></p>
+                                <p>A: Clans are groups of players who team up for quests and social interaction. You can join an existing clan or create your own from the 'Clans' menu.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item mb-3 rounded shadow-sm">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed fw-bold bg-white text-dark-green" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <i class="bi bi-person-circle me-2 text-primary"></i> Account Management
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body bg-light text-dark-green">
+                                <p><strong>Q: I forgot my password. How do I reset it?</strong></p>
+                                <p>A: On the login screen, click 'Forgot Password' and follow the instructions to reset it using your registered email address.</p>
+                                <p><strong>Q: Can I change my username?</strong></p>
+                                <p>A: Usernames cannot be changed after creation to maintain community consistency. Please choose carefully when signing up.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Social Section -->
+        <section id="testimonials" class="py-5 bg-dark-green text-white">
+            <div class="container">
+                <h2 class="display-4 fw-bold text-center mb-5">What Our Players Say</h2>
+                <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+                    <div class="col">
+                        <div class="card h-100 bg-secondary-dark text-white p-4 shadow-lg">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="files/graphics/avatar-female-3.jpg" alt="Avatar Emma R." class="rounded-circle avatar-md me-3">
+                                <div>
+                                    <h5 class="mb-0 fw-bold">Emma R.</h5>
+                                    <small class="text-primary">Active Player since 2024</small>
+                                </div>
+                            </div>
+                            <p class="card-text"><i class="bi bi-quote fs-4 me-2 text-primary"></i>Grafzorflit has truly redefined my online gaming experience. The variety of games is fantastic, and connecting with friends makes it even better. Highly recommend for anyone looking for fun without pressure!</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 bg-secondary-dark text-white p-4 shadow-lg">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="files/graphics/avatar-male-4.jpg" alt="Avatar Liam T." class="rounded-circle avatar-md me-3">
+                                <div>
+                                    <h5 class="mb-0 fw-bold">Liam T.</h5>
+                                    <small class="text-primary">New Member, 2025</small>
+                                </div>
+                            </div>
+                            <p class="card-text"><i class="bi bi-quote fs-4 me-2 text-primary"></i>I was looking for a platform to just relax and play games, and Grafzorflit delivered. It's refreshing to have a space focused purely on social interaction and fun. The daily challenges keep things interesting.</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 bg-secondary-dark text-white p-4 shadow-lg">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="files/graphics/avatar-female-4.jpg" alt="Avatar Olivia K." class="rounded-circle avatar-md me-3">
+                                <div>
+                                    <h5 class="mb-0 fw-bold">Olivia K.</h5>
+                                    <small class="text-primary">Veteran Player, 2023</small>
+                                </div>
+                            </div>
+                            <p class="card-text"><i class="bi bi-quote fs-4 me-2 text-primary"></i>I've been with Grafzorflit for a while now, and it's consistently improved. The community is supportive, and the developers clearly care about player experience. A solid choice for social gaming.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section id="contact" class="py-5 bg-light-green">
+            <div class="container">
+                <h2 class="display-4 fw-bold text-center text-dark-green mb-5">Get in Touch!</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-7">
+                        <div class="card bg-white shadow-lg p-4">
+                            <form action="contact-confirmation.html" method="POST" class="needs-validation" novalidate>
+                                <div class="mb-3">
+                                    <label for="contactName" class="form-label text-dark-green">Your Name</label>
+                                    <input type="text" class="form-control" id="contactName" name="name" placeholder="e.g., John Doe" required>
+                                    <div class="invalid-feedback">
+                                        Please enter your name.
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="contactEmail" class="form-label text-dark-green">Email Address</label>
+                                    <input type="email" class="form-control" id="contactEmail" name="email" placeholder="e.g., name@example.com" required>
+                                    <div class="invalid-feedback">
+                                        Please enter a valid email address.
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="contactSubject" class="form-label text-dark-green">Subject</label>
+                                    <input type="text" class="form-control" id="contactSubject" name="subject" placeholder="e.g., General Inquiry" required>
+                                    <div class="invalid-feedback">
+                                        Please enter a subject.
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="contactMessage" class="form-label text-dark-green">Your Message</label>
+                                    <textarea class="form-control" id="contactMessage" name="message" rows="5" placeholder="Type your message here..."></textarea>
+                                </div>
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Game / CTA Section -->
+        <section id="join-us" class="py-5 bg-dark-green text-white text-center">
+            <div class="container">
+                <h2 class="display-4 fw-bold mb-4">Ready to Join the Fun?</h2>
+                <p class="lead mb-5">Start playing now — no downloads required! Register and dive into a world of social gaming, challenges, and community. It's free, fun, and waiting for you.</p>
+                <a href="#games" class="btn btn-primary btn-lg smooth-scroll">Join Grafzorflit Today!</a>
+            </div>
+        </section>
+
+        <!-- Disclaimer Block -->
+        <section class="disclaimer-block py-4 text-center text-white">
+            <div class="container">
+                <div class="disclaimer-content p-4 rounded shadow-sm">
+                    <i class="bi bi-exclamation-octagon-fill text-warning display-5 mb-3 d-block"></i>
+                    <h3 class="fw-bold text-warning mb-3">Important Age Restriction Notice</h3>
+                    <p class="lead mb-0">
+                        The website and all games hosted on it are intended only for users aged 18 and over. Access and use of the website by persons under 18 is strictly prohibited. By creating an account or using the website, you confirm your age and accept full responsibility for the accuracy of the information you provide.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer bg-dark text-white py-4">
+        <div class="container">
+            <div class="col-md-12 text-center justify-content-center  mb-3 mb-md-0">
+                <a class="navbar-brand d-flex align-items-center justify-content-center " href="./">
+                    <img src="files/graphics/logo.png" alt="Grafzorflit Logo" class="me-2 logo-img">
+                    <span class="site-title">Grafzorflit</span>
+                </a>
+            </div>
+            <div class="row align-items-center">
+
+                <div class="col-md-12 text-center ">
+                    <div class="footer-logos d-flex flex-wrap justify-content-center  align-items-center gap-3">
+                        <a href="https://www.gamtalk.org/" target="_blank" rel="noopener noreferrer"><img src="files/graphics/media/gamtalk-logo_510.png" alt="GamTalk" class="footer-logo"></a>
+                        <a href="https://www.gambleaware.org/" target="_blank" rel="noopener noreferrer"><img src="files/graphics/media/gambleaware-logo_427.png" alt="GambleAware" class="footer-logo"></a>
+                        <a href="https://www.gamcare.org.uk/" target="_blank" rel="noopener noreferrer"><img src="files/graphics/media/gamcare-logo_748.svg" alt="GamCare" class="footer-logo"></a>
+                        <a href="https://www.gamstop.co.uk/" target="_blank" rel="noopener noreferrer"><img src="files/graphics/media/gamstop-logo_105.png" alt="GamStop" class="footer-logo"></a>
+                        <a href="https://gamblingtherapy.org/" target="_blank" rel="noopener noreferrer"><img src="files/graphics/media/gordonmoody-logo_83.png" alt="Gordon Moody" class="footer-logo"></a>
+                        <img src="files/graphics/media/18-plus-icon_159.webp" alt="18+ Only" class="footer-logo-18plus">
+                    </div>
+                </div>
+            </div>
+                            <div class="col-md-12 text-center mb-3 mb-md-0">
+                    <ul class="list-unstyled d-flex flex-wrap justify-content-center gap-3 mb-0">
+                        <li><a href="confidentiality.html" class="text-white-50 text-decoration-none hover-primary">Privacy Policy</a></li>
+                        <li><a href="tos.html" class="text-white-50 text-decoration-none hover-primary">Terms of Use</a></li>
+                        <li><a href="disclaimer.html" class="text-white-50 text-decoration-none hover-primary">Disclaimer</a></li>
+                        <li><a href="gaming-safety.html" class="text-white-50 text-decoration-none hover-primary">Responsible Gaming</a></li>
+                    </ul>
+                </div>
+                                <p class="small mt-2 mb-0 text-center ">&copy; 2025 Grafzorflit. All rights reserved.</p>
+
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="files/functions.js"></script>
+</body>
+</html>
